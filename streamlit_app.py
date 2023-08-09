@@ -1,7 +1,7 @@
 import streamlit as st
 
-st.title("My first streamlit application")
+import pandas
 
-st.header("header of new portion")
+df = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 
-st.write("Welcome to streamlit app!")
+st.dataframe(df)
