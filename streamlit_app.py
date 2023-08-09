@@ -6,6 +6,8 @@ df = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/frui
 
 df = df.set_index('Fruit')
 
-st.multiselect("Select fruit:", list(df.index), ['Avocado', 'Strawberries'])
+fruits_selected = st.multiselect("Select fruit:", list(df.index), ['Avocado', 'Strawberries'])
 
-st.dataframe(df)
+df_to_show = df.loc[fruits_selected]
+
+st.dataframe(df_to_show)
